@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import {ToolbarModule} from "primeng/toolbar";
 import {ButtonModule} from "primeng/button";
 import {MenuModule} from "primeng/menu";
-import {MegaMenuItem, MenuItem} from "primeng/api";
+import {MegaMenuItem} from "primeng/api";
 import {TabMenuModule} from "primeng/tabmenu";
 import {MegaMenuModule} from "primeng/megamenu";
 import {PanelMenuModule} from "primeng/panelmenu";
@@ -16,27 +16,31 @@ import {PanelMenuModule} from "primeng/panelmenu";
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = "landingpage";
   items: MegaMenuItem[] = [
     {
       label: 'Über mich',
-      icon: '',
+      icon: 'pi pi-id-card',
+      routerLink: '/about-me'
     },
     {
-      label: 'Erfahrungen',
-      icon: ''
+      label: 'Erfahrung',
+      icon: 'pi pi-clock',
+      routerLink: '/experience'
     },
     {
       label: 'Skills',
-      icon: ''
+      icon: 'pi pi-star',
+      routerLink: '/skills'
     },
     {
       label: 'Zertifikate',
-      icon: ''
+      icon: 'pi pi-verified',
+      routerLink: '/certificates'
     },
     {
       label: 'Erfolge',
-      icon: ''
+      icon: 'pi pi-trophy',
+      routerLink: '/achievements'
     }
   ];
 
