@@ -1,1 +1,9 @@
-<p>certificates works!</p>
+<h2 class="mb-5">Zertifikate & Workshops</h2>
+<p-timeline [value]="certificates" align="alternate">
+  <ng-template pTemplate="marker" let-cert>
+    <span style="text-align: center">{{cert.date}}</span>
+  </ng-template>
+  <ng-template pTemplate="content" let-cert>
+    <lp-certificate [certificate]="cert"></lp-certificate>
+  </ng-template>
+</p-timeline>

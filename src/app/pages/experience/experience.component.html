@@ -1,1 +1,9 @@
-<p>experience works!</p>
+<h2 class="mb-5">Erfahrungen</h2>
+<p-timeline [value]="experiences" align="alternate">
+  <ng-template pTemplate="marker">
+    <span><i [class]="'pi pi-angle-up'"></i></span>
+  </ng-template>
+  <ng-template pTemplate="content" let-experience>
+    <lp-experience [experience]="experience"></lp-experience>
+  </ng-template>
+</p-timeline>

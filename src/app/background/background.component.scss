@@ -1,0 +1,61 @@
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.inner-background {
+  position: fixed;
+  left: 0;
+  display: inline-block;
+  opacity: .4;
+  -webkit-transform: perspective(600px) rotateX(60deg) rotateZ(30deg);
+  -moz-transform: perspective(600px) rotateX(60deg) rotateZ(30deg);
+  -ms-transform: perspective(600px) rotateX(60deg) rotateZ(30deg);
+  -o-transform: perspective(600px) rotateX(60deg) rotateZ(30deg);
+  transform: perspective(600px) rotateX(60deg) rotateZ(33deg);
+
+}
+
+.hex:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid var(--primary-color);
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  position: absolute;
+  top: -30px;
+}
+
+.hex {
+  margin-top: 30px;
+  width: 104px;
+  height: 60px;
+  background-color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.hex:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  border-top: 30px solid var(--primary-color);
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+}
+
+.hex-row {
+  clear: left;
+  white-space: nowrap;
+}
+
+.hex-row.even {
+  margin-left: 53px;
+}

@@ -1,0 +1,6 @@
+<div class="m-4 p-4 skill-container" *ngIf="skill!.name">
+  <img *ngIf="skill.image" src="{{skill.image}}" class="flex mx-auto mb-4 w-auto" height="50" width="50" alt="">
+  <div *ngIf="skill.icon" class="w-full mb-4 flex"><i class=" text-6xl mx-auto {{skill.icon}}"></i></div>
+  <div class="mb-4 font-bold" style="text-align: center">{{skill.name}}</div>
+  <p-rating [(ngModel)]="skill.rating" [readonly]="true" [cancel]="false"></p-rating>
+</div>

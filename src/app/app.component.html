@@ -1,21 +1,20 @@
-<p-toolbar [style]="{'margin':'0', 'border-width':'0', 'border-radius': '0'}">
+<lp-background></lp-background>
+<p-toolbar>
   <div class="p-toolbar-group-start">
   </div>
-  <div class="p-toolbar-group-center">
-        Philip Küchler
+  <div class="p-toolbar-group-center text-xl">
+    Philip&nbsp;<span class="text-primary">Küchler</span>
   </div>
   <div class="p-toolbar-group-end">
+    <p-toggleButton (onChange)="changeTheme()" [(ngModel)]="themeToggled" offIcon="pi pi-sun" onIcon="pi pi-moon"
+                    styleClass="p-button-rounded"></p-toggleButton>
   </div>
 </p-toolbar>
-<div class="grid mx-0 mt-3">
-  <div class="col-10 mx-auto" style="max-width: 1600px">
-    <div class="grid">
-      <div class="col-fixed w-15rem p-0 mr-3">
-        <p-megaMenu styleClass="w-full" orientation="vertical" [model]="items"></p-megaMenu>
-      </div>
-      <div class="col p-menu">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+<div class="grid mx-auto content-container">
+  <div class="col-12 menu-container">
+    <p-megaMenu styleClass="col-12 w-full" [model]="items"></p-megaMenu>
+  </div>
+  <div class="col-12 mt-3">
+    <router-outlet></router-outlet>
   </div>
 </div>

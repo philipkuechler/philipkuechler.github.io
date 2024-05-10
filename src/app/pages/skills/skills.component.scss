@@ -1,0 +1,25 @@
+.menu-item-active {
+  background-color: var(--primary);
+}
+
+.dev-icons {
+  font-size: 3rem;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+  padding-right: 12px;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: .5rem
+}
+
+.dev-icons .list-inline-item i:hover {
+  color: #54a0ff;
+}
