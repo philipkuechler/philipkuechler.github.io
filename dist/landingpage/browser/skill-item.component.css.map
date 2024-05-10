@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/skills/skill-item/skill-item.component.scss"],
+  "sourcesContent": [".skill-container {\r\n  background: rgba(255, 255, 255, .1);\r\n  box-shadow: 0 0 32px var(--primary-color);\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA;AACE,cAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACA,cAAA,EAAA,EAAA,KAAA,IAAA;;",
+  "names": []
+}
