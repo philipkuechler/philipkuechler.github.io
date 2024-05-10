@@ -1,7 +1,7 @@
 name: Deploy static content to Pages
 on:
   push:
-    branches: [ "github-pages" ]
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -9,33 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
+      - name: Adding Node.js
+        uses: actions/setup-node@v2
         with:
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: npm install and npm run CI commands
+          node-version: 16
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Angular App
+        run: npm run build
+      - name: Deploy to gh pages
         run: |
-          npm i
-          npm run test:ci
-          npm run build:ci
-#      - name: Adding Node.js
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: 16
-#      - name: Install Dependencies
-#        run: npm install
-#      - name: Build Angular App
-#        run: npm run build
-#      - name: Deploy to gh pages
-#        run: |
-#          npx angular-cli-ghpages --dir=dist/landingpage/browser
-#        env:
-#          CI: true
-#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          npx angular-cli-ghpages --dir=dist/landingpage/browser
+        env:
+          CI: true
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
