@@ -12,7 +12,16 @@
 </p-toolbar>
 <div class="grid mx-auto content-container">
   <div class="col-12 menu-container">
-    <p-megaMenu styleClass="col-12 w-full" [model]="items"></p-megaMenu>
+    <p-megaMenu styleClass="col-12 w-full" [model]="items">
+      <ng-template pTemplate="item" let-item>
+
+        <a [routerLink]="item.routerLink" [ngClass]="{'active': checkRouteActive(item.routerLink)}"
+           class="p-menuitem-link">
+          <span [class]="item.icon"></span>
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </ng-template>
+    </p-megaMenu>
   </div>
   <div class="col-12 mt-3">
     <router-outlet></router-outlet>
