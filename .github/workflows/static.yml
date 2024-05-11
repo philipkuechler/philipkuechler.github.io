@@ -34,4 +34,14 @@ jobs:
         run: npm ci
 
       - name: Build Angular App
-        run: npm run build
+        run: npm run build:prod
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artefact
+        with:
+          path: /dist/landingpage
+
+      - name: Deploy Artifact
+        uses: actions/deploy-pages
+        with:
+          token: ${{secrets.GH_TOKEN}}
