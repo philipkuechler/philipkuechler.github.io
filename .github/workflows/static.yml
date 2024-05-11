@@ -3,19 +3,15 @@ on:
   push:
     branches: [ master ]
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Adding Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v4
@@ -28,18 +24,17 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm ci
-
       - name: Build Angular App
         run: npm run build:prod
-
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/landingpage/
-
       - name: Deploy Artifact
         uses: actions/deploy-pages@v4
+        permissions:
+          id-token: write
+          pages: write
