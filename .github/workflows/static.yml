@@ -39,7 +39,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /dist/landingpage/
+          path: dist/landingpage/
 
       - name: Deploy Artifact
         uses: actions/deploy-pages@v4
