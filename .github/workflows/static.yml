@@ -37,11 +37,11 @@ jobs:
         run: npm run build:prod
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artefact
+        uses: actions/upload-pages-artefact@v3
         with:
-          path: /dist/landingpage
+          path: /dist/landingpage/
 
       - name: Deploy Artifact
-        uses: actions/deploy-pages
+        uses: actions/deploy-pages@v4
         with:
           token: ${{secrets.GH_TOKEN}}
