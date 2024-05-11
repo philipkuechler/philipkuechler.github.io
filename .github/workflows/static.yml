@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    permissions:
+      id-token: write
+      pages: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +38,3 @@ jobs:
           path: dist/landingpage/
       - name: Deploy Artifact
         uses: actions/deploy-pages@v4
-        permissions:
-          id-token: write
-          pages: write
