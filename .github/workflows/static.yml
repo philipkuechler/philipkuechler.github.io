@@ -37,7 +37,7 @@ jobs:
         run: npm run build:prod
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artefact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: /dist/landingpage/
 
