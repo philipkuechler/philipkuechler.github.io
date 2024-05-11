@@ -43,5 +43,3 @@ jobs:
 
       - name: Deploy Artifact
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{secrets.GH_TOKEN}}
