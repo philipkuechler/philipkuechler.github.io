@@ -24,7 +24,7 @@ export class ExperienceComponent {
                     Java, Angular und Hibernate zu entwickeln.<br>
                     Des Weiteren bin ich aktuell einem internen Projekt zugewiesen worden, welches im Gesundheitssektor agiert.
                     Dieses Projekt wird ebenfalls mit Java und Angular entwickelt.<br>
-                    Die Projekte wurden im SCRUM-Umfeld entwickelt.`,
+                    Die Projekte wurden alle mit der IDE IntelliJ und im SCRUM-Umfeld entwickelt.`,
       resumeDate: 'August 2020 - heute'
     },
     {
@@ -32,14 +32,14 @@ export class ExperienceComponent {
       company: 'Backclick GmbH',
       description: `Innerhalb der 3 Jahre wurde ich mit der Weiterentwicklung von MySQL Datenbanken, des Backends,
                     also der entsprechenden Java-Applikation, und des Markup mit Javascript als Frontend betraut und eingesetzt.
-                    Aufgesetzt wird dies auf einem Linux basierten Tomcat Webserver. Entwickelt wird mit der IDE Eclipse.<br>
+                    Aufgesetzt wird dies auf einem Linux basierten Tomcat Webserver. Entwickelt wurde mit der IDE Eclipse.<br>
                     Auch die Erstellung von Newslettern und der Kundensupport gehörte zu meinen Aufgaben.`,
       resumeDate: 'August 2017 - August 2020'
     },
     {
       job: 'Verschiedenes',
-      company: 'Das Leben',
-      description: `Wie das Leben manchmal so spielt, muss man manchmal einfach Geld verdienen, um zu überleben.`,
+      company: 'Diverse Unternehmen',
+      description: `In der Zeit habe ich für verschiedene Unternehmen, wie Pizza Hut, DPD und dem Rewe Lieferservice, als Lieferant und Kommissionierer gearbeitet.`,
       resumeDate: 'Juli 2010 - August 2017'
     },
     {
