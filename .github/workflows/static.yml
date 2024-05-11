@@ -5,9 +5,6 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    permissions:
-      id-token: write
-      pages: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,5 +33,16 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/landingpage/
+  deploy:
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy Artifact
+        id: deployment
         uses: actions/deploy-pages@v4
